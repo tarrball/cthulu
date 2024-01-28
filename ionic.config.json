@@ -1,0 +1,7 @@
+{
+  "name": "ShopperDemo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
