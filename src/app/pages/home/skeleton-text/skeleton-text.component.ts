@@ -15,9 +15,8 @@ import { IonSkeletonText } from '@ionic/angular/standalone';
     @for (_ of [1,2]; track $index) {
     <div class="d-flex align-items-center ion-margin">
       <div class="d-flex align-items-center justify-content-between w-100">
-        @for (_ of [1,2]; track $index) {
         <ion-skeleton-text style="width: 100px"></ion-skeleton-text>
-        }
+        <ion-skeleton-text style="width: 100px"></ion-skeleton-text>
       </div>
     </div>
     <div class="d-flex align-items-center ion-margin" style="width: 500px">

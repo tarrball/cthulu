@@ -1,20 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {
   IonHeader,
   IonToolbar,
   IonTitle,
-  IonCard,
-  IonCardHeader,
-  IonCardContent,
   IonContent,
-  IonSkeletonText,
   IonList,
-  IonCardTitle,
-  IonCardSubtitle,
   IonLabel,
-  IonButton,
   IonModal,
-  IonIcon,
   IonItem,
 } from '@ionic/angular/standalone';
 import { VideoService } from '../../services/video.service';
@@ -26,6 +18,8 @@ import { ellipsisHorizontal } from 'ionicons/icons';
 import { VideoCardComponent } from '../../components/video-card/video-card.component';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import { SkeletonTextComponent } from './skeleton-text/skeleton-text.component';
+import { TallVideoButtonComponent } from '../../components/tall-video-button/tall-video-button.component';
+import { MediaOptionsComponent } from '../../components/media-options/media-options.component';
 
 @Component({
   selector: 'app-home',
@@ -34,28 +28,36 @@ import { SkeletonTextComponent } from './skeleton-text/skeleton-text.component';
   standalone: true,
   imports: [
     IonItem,
-    IonIcon,
     CommonModule,
-    IonButton,
     IonContent,
     IonLabel,
     IonList,
     IonModal,
     IonHeader,
-    IonSkeletonText,
     IonToolbar,
     IonTitle,
+    MediaOptionsComponent,
     SectionHeaderComponent,
     SkeletonTextComponent,
+    TallVideoButtonComponent,
     VideoCardComponent,
   ],
 })
 export class HomePage {
+  @ViewChild('mediaOptions') mediaOptionsModal: IonModal = null!;
+
   public videos$: Observable<Video[]>;
+
+  public selectedVideo: Video | null = null;
 
   constructor(videoService: VideoService) {
     this.videos$ = videoService.getVideos();
 
     addIcons({ ellipsisHorizontal });
+  }
+
+  public async showMediaOptions(video: Video) {
+    this.selectedVideo = video;
+    await this.mediaOptionsModal.present();
   }
 }
