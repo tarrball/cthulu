@@ -1,0 +1,7 @@
+{
+  "name": "Cthulu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

@@ -1,0 +1,31 @@
+ion-card {
+  img {
+    min-height: 105px;
+    min-width: 100%;
+  }
+}
+
+.skeleton-container {
+  .thumbnail {
+    height: 125px;
+  }
+
+  .subtitle {
+    height: 15px;
+    margin-top: 16px;
+    width: 50%;
+  }
+
+  .title {
+    height: 20px;
+    margin-top: 8px;
+    width: 75%;
+  }
+
+  .content {
+    height: 12px;
+    margin-top: 12px;
+    margin-bottom: 32px;
+    width: 90%;
+  }
+}
