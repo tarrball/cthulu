@@ -28,7 +28,7 @@
     @for (video of videos.slice(0, 5); track $index) {
     <app-tall-video-button
       [video]="video"
-      (viewDetails)="mediaDetails.present()"
+      (viewDetails)="showMediaDetails(video)"
       (viewOptions)="showMediaOptions(video)"
     ></app-tall-video-button>
     }

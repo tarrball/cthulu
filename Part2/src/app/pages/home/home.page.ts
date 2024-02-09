@@ -61,6 +61,11 @@ export class HomePage {
     addIcons({ ellipsisHorizontal });
   }
 
+  public async showMediaDetails(video: Video) {
+    this.selectedVideo = video;
+    await this.mediaDetails.present();
+  }
+
   public async showMediaOptions(video: Video) {
     this.selectedVideo = video;
     await this.mediaOptionsModal.present();
