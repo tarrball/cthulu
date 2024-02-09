@@ -1,7 +1,12 @@
-.content {
-  background: var(--ion-color-dark);
+.background-image {
+  min-height: 350px;
+  pointer-events: none;
 }
 
-.background-image {
-  pointer-events: none;
+div.background-image {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.50) 50%)
+}
+
+.dark-background {
+  background: var(--ion-color-dark);
 }

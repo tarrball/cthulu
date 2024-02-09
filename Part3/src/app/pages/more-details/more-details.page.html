@@ -1,22 +1,50 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" style="background: black">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()" color="light">
+        <ion-icon slot="icon-only" name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title> More Details </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="content h-100" [fullscreen]="true">
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">More Details</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
+<ion-content [fullscreen]="true" scrollY="false">
+  <div class="dark-background">
+    <img
+      [src]="video.thumbnailBackground"
+      alt="thumbnail"
+      class="background-image"
+      draggable="false"
+    />
 
-  <img
-    [src]="video.thumbnailBackground"
-    alt="thumbnail"
-    class="position-absolute top-0 background-image"
-    draggable="false"
-  />
+    <!-- Gradient -->
+    <div class="position-absolute top-0 background-image w-100"></div>
 
-  <ion-label></ion-label>
+    <div class="ion-padding" style="height: 70vh">
+      <div class="d-flex flex-column align-items-start">
+        <ion-label color="light">{{video.title}}</ion-label>
+        <ion-note color="light">{{video.description}}</ion-note>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <ion-button class="flex-grow-1" fill="solid" color="light">
+          <ion-icon slot="start" name="play"></ion-icon>
+          Watch Movie</ion-button
+        >
+        <ion-button fill="outline" color="light">Trailer</ion-button>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-between">
+        @for(interaction of interactions; track $index) {
+        <div class="d-flex flex-column align-items-center">
+          <ion-button color="light">
+            <ion-icon slot="icon-only" [name]="interaction.icon"></ion-icon>
+          </ion-button>
+          <ion-text color="light" size="small">{{interaction.name}}</ion-text>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
 </ion-content>
