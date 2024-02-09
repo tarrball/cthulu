@@ -25,6 +25,7 @@ import { addIcons } from 'ionicons';
 import { ellipsisHorizontal } from 'ionicons/icons';
 import { VideoCardComponent } from '../../components/video-card/video-card.component';
 import { SectionHeaderComponent } from './section-header/section-header.component';
+import { SkeletonTextComponent } from './skeleton-text/skeleton-text.component';
 
 @Component({
   selector: 'app-home',
@@ -45,6 +46,7 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
     IonToolbar,
     IonTitle,
     SectionHeaderComponent,
+    SkeletonTextComponent,
     VideoCardComponent,
   ],
 })
