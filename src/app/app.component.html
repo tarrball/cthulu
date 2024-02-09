@@ -1,3 +1,20 @@
 <ion-app>
+  @if(isLaunched) {
   <ion-router-outlet></ion-router-outlet>
+
+  } @else {
+  <!-- ion color dark -->
+  <div
+    class="w-100 h-100 d-flex align-items-center justify-content-center logo-container"
+    [class.launching]="isLaunching"
+  >
+    <img
+      class="logo"
+      [class.huge]="isSplashing"
+      [class.launching]="isLaunching"
+      alt="logo"
+      src="assets/icon/cthuly.png"
+    />
+  </div>
+  }
 </ion-app>
