@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import {
   IonBackButton,
+  IonButton,
   IonButtons,
   IonHeader,
+  IonIcon,
   IonToolbar,
   IonTitle,
   IonContent,
@@ -20,6 +22,8 @@ import { Observable } from 'rxjs';
 import { Video } from '../../data-contracts/video';
 import { VideoService } from '../../services/video.service';
 import { CommonModule } from '@angular/common';
+import { addIcons } from 'ionicons';
+import { ellipsisHorizontal } from 'ionicons/icons';
 
 @Component({
   selector: 'app-view-more',
@@ -37,8 +41,10 @@ import { CommonModule } from '@angular/common';
     IonLabel,
     IonItem,
     IonBackButton,
+    IonButton,
     IonButtons,
     IonHeader,
+    IonIcon,
     IonToolbar,
     IonTitle,
     IonContent,
@@ -50,5 +56,7 @@ export class ViewMorePage {
 
   constructor(videoService: VideoService) {
     this.videos$ = videoService.getVideos();
+
+    addIcons({ ellipsisHorizontal });
   }
 }
