@@ -21,6 +21,7 @@ import { SkeletonTextComponent } from './skeleton-text/skeleton-text.component';
 import { TallVideoButtonComponent } from '../../components/tall-video-button/tall-video-button.component';
 import { MediaOptionsComponent } from '../../components/media-options/media-options.component';
 import { MediaOptionType } from '../../data-contracts/media-option-type';
+import { MoreDetailsPage } from '../more-details/more-details.page';
 
 @Component({
   selector: 'app-home',
@@ -38,6 +39,7 @@ import { MediaOptionType } from '../../data-contracts/media-option-type';
     IonToolbar,
     IonTitle,
     MediaOptionsComponent,
+    MoreDetailsPage,
     SectionHeaderComponent,
     SkeletonTextComponent,
     TallVideoButtonComponent,

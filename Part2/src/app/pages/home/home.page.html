@@ -60,19 +60,10 @@
     [draggable]="false"
   >
     <ng-template>
-      <ion-header [translucent]="true">
-        <ion-toolbar>
-          <ion-title> Media Details </ion-title>
-        </ion-toolbar>
-      </ion-header>
-
-      <ion-content [fullscreen]="true">
-        <ion-header collapse="condense">
-          <ion-toolbar>
-            <ion-title size="large">Media Details</ion-title>
-          </ion-toolbar>
-        </ion-header>
-      </ion-content>
+      <app-more-details
+        [modal]="mediaDetails"
+        [video]="selectedVideo!"
+      ></app-more-details>
     </ng-template>
   </ion-modal>
 </ion-content>
