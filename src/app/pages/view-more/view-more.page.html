@@ -14,11 +14,27 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="d-flex flex-wrap">
-    @for(video of videos$ | async; track $index) {
-    <!-- TODO Make me a pretty card -->
-    <!-- https://ionicframework.com/docs/api/card -->
-    <div class="media-cell">{{video.title}}</div>
-    }
+  <div class="d-flex flex-wrap justify-content-around">
+    @if(videos$ | async; as videos) { @for(video of videos; track $index) {
+    <ion-card>
+      <img alt="Video thumbnail" [src]="video.thumbnailFeatured" />
+
+      <ion-card-header>
+        <ion-card-title>{{ video.title }}</ion-card-title>
+        <ion-card-subtitle>Promoted Content</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content> {{ video.description }} </ion-card-content>
+    </ion-card>
+    } } @else { @for(_ of [1, 2, 3]; track $index) {
+    <div
+      class="skeleton-container d-flex flex-column align-items-start ion-padding w-100"
+    >
+      <ion-skeleton-text animated class="thumbnail"></ion-skeleton-text>
+      <ion-skeleton-text animated class="subtitle"></ion-skeleton-text>
+      <ion-skeleton-text animated class="title"></ion-skeleton-text>
+      <ion-skeleton-text animated class="content"></ion-skeleton-text>
+    </div>
+    } }
   </div>
 </ion-content>
