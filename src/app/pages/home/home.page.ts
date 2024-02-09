@@ -20,6 +20,7 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
 import { SkeletonTextComponent } from './skeleton-text/skeleton-text.component';
 import { TallVideoButtonComponent } from '../../components/tall-video-button/tall-video-button.component';
 import { MediaOptionsComponent } from '../../components/media-options/media-options.component';
+import { MediaOptionType } from '../../data-contracts/media-option-type';
 
 @Component({
   selector: 'app-home',
@@ -44,6 +45,8 @@ import { MediaOptionsComponent } from '../../components/media-options/media-opti
   ],
 })
 export class HomePage {
+  @ViewChild('mediaDetails') mediaDetails: IonModal = null!;
+
   @ViewChild('mediaOptions') mediaOptionsModal: IonModal = null!;
 
   public videos$: Observable<Video[]>;
@@ -59,5 +62,15 @@ export class HomePage {
   public async showMediaOptions(video: Video) {
     this.selectedVideo = video;
     await this.mediaOptionsModal.present();
+  }
+
+  public async performOption(option: MediaOptionType) {
+    console.log('Option selected:', option);
+
+    await this.mediaOptionsModal.dismiss();
+
+    if (option === 'Go to Series Details') {
+      await this.mediaDetails.present();
+    }
   }
 }

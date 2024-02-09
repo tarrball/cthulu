@@ -45,7 +45,10 @@
     [draggable]="false"
   >
     <ng-template>
-      <app-media-options [video]="selectedVideo!"></app-media-options>
+      <app-media-options
+        [video]="selectedVideo!"
+        (optionSelected)="performOption($event)"
+      ></app-media-options>
     </ng-template>
   </ion-modal>
 
