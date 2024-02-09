@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>View More</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">View More</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="d-flex flex-wrap justify-content-around">
+    @if(videos$ | async; as videos) { @for(video of videos; track $index) {
+    <!-- TODO Make me a pretty card -->
+    <!-- https://ionicframework.com/docs/api/card -->
+    } } @else {
+    <!-- TODO Make me pretty skeleton text -->
+    <!-- https://ionicframework.com/docs/api/skeleton-text -->
+    }
+  </div>
+</ion-content>

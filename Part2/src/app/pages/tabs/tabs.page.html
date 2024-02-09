@@ -1,0 +1,14 @@
+<ion-tabs (ionTabsDidChange)="updateIcons($event)">
+  <ion-tab-bar slot="bottom">
+    @for (tab of tabs; track $index) {
+    <ion-tab-button [tab]="tab.tab" [href]="'/tabs/' + tab.tab">
+      <ion-icon
+        aria-hidden="true"
+        size="small"
+        [name]="selectedTab === tab.tab ? tab.iconActive : tab.iconInactive"
+      ></ion-icon>
+      <ion-label>{{tab.title}}</ion-label>
+    </ion-tab-button>
+    }
+  </ion-tab-bar>
+</ion-tabs>
