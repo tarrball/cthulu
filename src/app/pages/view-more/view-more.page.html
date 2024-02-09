@@ -13,4 +13,12 @@
       <ion-title size="large">View More</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="d-flex flex-wrap">
+    @for(video of videos$ | async; track $index) {
+    <!-- TODO Make me a pretty card -->
+    <!-- https://ionicframework.com/docs/api/card -->
+    <div class="media-cell">{{video.title}}</div>
+    }
+  </div>
 </ion-content>

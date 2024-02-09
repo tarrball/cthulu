@@ -25,7 +25,7 @@
   <app-section-header [label]="header"></app-section-header>
 
   <div class="d-flex align-items-center overflow-x-auto">
-    @for (video of videos; track $index) {
+    @for (video of videos.slice(0, 5); track $index) {
     <app-tall-video-button
       [video]="video"
       (viewDetails)="mediaDetails.present()"

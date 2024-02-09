@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 import { addIcons } from 'ionicons';
 import { ellipsisHorizontal } from 'ionicons/icons';
 import { VideoCardComponent } from '../../components/video-card/video-card.component';
-import { SectionHeaderComponent } from './section-header/section-header.component';
+import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 import { SkeletonTextComponent } from './skeleton-text/skeleton-text.component';
 import { TallVideoButtonComponent } from '../../components/tall-video-button/tall-video-button.component';
 import { MediaOptionsComponent } from '../../components/media-options/media-options.component';

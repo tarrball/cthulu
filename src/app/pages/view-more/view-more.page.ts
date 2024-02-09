@@ -6,7 +6,19 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardSubtitle,
+  IonCardContent,
 } from '@ionic/angular/standalone';
+import { Observable } from 'rxjs';
+import { Video } from '../../data-contracts/video';
+import { VideoService } from '../../services/video.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-view-more',
@@ -14,6 +26,15 @@ import {
   styleUrls: ['view-more.page.scss'],
   standalone: true,
   imports: [
+    CommonModule,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardSubtitle,
+    IonCardContent,
+    IonList,
+    IonLabel,
+    IonItem,
     IonBackButton,
     IonButtons,
     IonHeader,
@@ -23,5 +44,9 @@ import {
   ],
 })
 export class ViewMorePage {
-  constructor() {}
+  public videos$: Observable<Video[]>;
+
+  constructor(videoService: VideoService) {
+    this.videos$ = videoService.getVideos();
+  }
 }
