@@ -19,28 +19,10 @@
 
   @if (videos$ | async; as videos) {
 
-  <ion-card>
-    <img
-      alt="Some alt text"
-      class="w-100"
-      [src]="videos[0].thumbnailFeatured"
-    />
-
-    <ion-card-header>
-      <ion-card-title>{{videos[0].title}}</ion-card-title>
-      <ion-card-subtitle>Season Premier Now Streaming</ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-card-content> {{videos[0].description}} </ion-card-content>
-  </ion-card>
+  <app-video-card [video]="videos[0]"></app-video-card>
 
   @for(_ of [1, 2]; track $index) {
-  <div
-    class="d-flex align-items-center justify-content-between ion-margin-horizontal ion-margin-top ion-padding-top"
-  >
-    <ion-label>TV for You</ion-label>
-    <ion-button fill="clear" size="small">View More</ion-button>
-  </div>
+  <app-section-header [label]="'TV for You'"></app-section-header>
 
   <div class="d-flex align-items-center overflow-x-auto">
     @for (video of videos; track $index) {

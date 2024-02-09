@@ -14,36 +14,38 @@ import {
   IonLabel,
   IonButton,
   IonModal,
-  IonIcon, IonItem } from '@ionic/angular/standalone';
+  IonIcon,
+  IonItem,
+} from '@ionic/angular/standalone';
 import { VideoService } from '../../services/video.service';
 import { Video } from '../../data-contracts/video';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { addIcons } from 'ionicons';
 import { ellipsisHorizontal } from 'ionicons/icons';
+import { VideoCardComponent } from '../../components/video-card/video-card.component';
+import { SectionHeaderComponent } from './section-header/section-header.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonItem, 
+  imports: [
+    IonItem,
     IonIcon,
     CommonModule,
     IonButton,
-    IonLabel,
-    IonCardSubtitle,
-    IonCardTitle,
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
     IonContent,
+    IonLabel,
     IonList,
     IonModal,
     IonHeader,
     IonSkeletonText,
     IonToolbar,
     IonTitle,
+    SectionHeaderComponent,
+    VideoCardComponent,
   ],
 })
 export class HomePage {
