@@ -12,6 +12,11 @@ export const routes: Routes = [
           import('../home/home.page').then((m) => m.HomePage),
       },
       {
+        path: 'home/view-more',
+        loadComponent: () =>
+          import('../view-more/view-more.page').then((m) => m.ViewMorePage),
+      },
+      {
         path: 'my-stuff',
         loadComponent: () =>
           import('../my-stuff/my-stuff.page').then((m) => m.MyStuffPage),

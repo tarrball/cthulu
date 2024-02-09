@@ -28,8 +28,8 @@ import { MediaOptionType } from '../../data-contracts/media-option-type';
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [
-    IonItem,
     CommonModule,
+    IonItem,
     IonContent,
     IonLabel,
     IonList,
