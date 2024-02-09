@@ -16,8 +16,12 @@
 
   <div class="d-flex flex-wrap justify-content-around">
     @if(videos$ | async; as videos) { @for(video of videos; track $index) {
-    <ion-card>
-      <img alt="Video thumbnail" [src]="video.thumbnailFeatured" />
+    <ion-card class="w-100">
+      <img
+        alt="Video thumbnail"
+        style="min-height: 105px"
+        [src]="video.thumbnailFeatured"
+      />
 
       <ion-card-header>
         <ion-card-title>{{ video.title }}</ion-card-title>
